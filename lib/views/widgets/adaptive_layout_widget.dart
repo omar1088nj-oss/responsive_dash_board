@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-class AdaptiveLayout extends StatelessWidget {
-  const AdaptiveLayout({
+class AdaptiveLayoutWidget extends StatelessWidget {
+  const AdaptiveLayoutWidget({
     super.key,
     required this.customMobile,
     required this.custpmTablit,
