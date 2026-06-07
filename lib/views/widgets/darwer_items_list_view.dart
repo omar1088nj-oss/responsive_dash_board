@@ -14,7 +14,7 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
   int selectedIndex = 0;
   final List<DrawerItemModel> items = [
     DrawerItemModel(title: 'Dashboard', image: Assets.imagesDashboard),
-    DrawerItemModel(title: 'My Transaction', image: Assets.imagesMyTransaction),
+    DrawerItemModel(title: 'My Transaction', image: Assets.imagesMyTransactio),
     DrawerItemModel(title: 'Statistics', image: Assets.imagesStatistics),
     DrawerItemModel(title: 'Wallet Account', image: Assets.imagesWalletAccount),
     DrawerItemModel(title: 'My Investments', image: Assets.imagesMyInvestments),
