@@ -30,7 +30,7 @@ class _MyCardsSectionState extends State<MyCardsSection> {
       children: [
         SizedBox(
           width: 420,
-          child: Text('My Card', style: AppStyles.styleSemiBold20),
+          child: Text('My Card', style: AppStyles.styleSemiBold20(context)),
         ),
         SizedBox(height: 20),
         MyCardsPasgeView(pageController: pageController),

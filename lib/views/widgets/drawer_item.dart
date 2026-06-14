@@ -11,12 +11,12 @@ class DrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return isActive ?? false
         ? ActiveDrawer(drawerModelItem: drawerModelItem)
-        : UnActiveDrawer(drawerModelItem: drawerModelItem);
+        : InActiveDrawer(drawerModelItem: drawerModelItem);
   }
 }
 
-class UnActiveDrawer extends StatelessWidget {
-  const UnActiveDrawer({super.key, required this.drawerModelItem});
+class InActiveDrawer extends StatelessWidget {
+  const InActiveDrawer({super.key, required this.drawerModelItem});
 
   final DrawerItemModel drawerModelItem;
 
@@ -24,7 +24,14 @@ class UnActiveDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(drawerModelItem.image),
-      title: Text(drawerModelItem.title, style: AppStyles.styleMedium16),
+      title: FittedBox(
+        alignment: Alignment.centerLeft,
+        fit: BoxFit.scaleDown,
+        child: Text(
+          drawerModelItem.title,
+          style: AppStyles.styleMedium16(context),
+        ),
+      ),
     );
   }
 }
@@ -38,7 +45,14 @@ class ActiveDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(drawerModelItem.image),
-      title: Text(drawerModelItem.title, style: AppStyles.styleBold16),
+      title: FittedBox(
+        alignment: Alignment.centerLeft,
+        fit: BoxFit.none,
+        child: Text(
+          drawerModelItem.title,
+          style: AppStyles.styleBold16(context),
+        ),
+      ),
       trailing: Container(
         width: 3.27,
         // height: 48,

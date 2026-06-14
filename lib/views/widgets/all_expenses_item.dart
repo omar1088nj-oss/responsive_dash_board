@@ -31,7 +31,7 @@ class UnSelectedItem extends StatelessWidget {
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xffFAFAFA)),
+          side: BorderSide(width: 1, color: const Color(0xffFAFAFA)),
           borderRadius: BorderRadius.circular(12),
         ),
       ),
@@ -40,11 +40,29 @@ class UnSelectedItem extends StatelessWidget {
         children: [
           AllExpensesItemHeader(image: itemModel.image),
           SizedBox(height: 32),
-          Text(itemModel.title, style: AppStyles.styleSemiBold16),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.title,
+              style: AppStyles.styleSemiBold16(context),
+            ),
+          ),
           SizedBox(height: 8),
-          Text(itemModel.date, style: AppStyles.styleRegular14),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.date,
+              style: AppStyles.styleRegular14(context),
+            ),
+          ),
           SizedBox(height: 16),
-          Text(itemModel.price, style: AppStyles.styleSemiBold24),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.price,
+              style: AppStyles.styleSemiBold24(context),
+            ),
+          ),
         ],
       ),
     );
@@ -62,7 +80,10 @@ class SelectedItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
         color: Color(0xff4EB7F2),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(width: 1, color: const Color(0xff4EB7F2)),
+          borderRadius: BorderRadius.circular(12),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,19 +94,34 @@ class SelectedItem extends StatelessWidget {
             imageBackGround: Color(0xff5FBEF3),
           ),
           SizedBox(height: 32),
-          Text(
-            itemModel.title,
-            style: AppStyles.styleSemiBold16.copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.title,
+              style: AppStyles.styleSemiBold16(
+                context,
+              ).copyWith(color: Colors.white),
+            ),
           ),
           SizedBox(height: 8),
-          Text(
-            itemModel.date,
-            style: AppStyles.styleRegular14.copyWith(color: Color(0xffFAFAFA)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.date,
+              style: AppStyles.styleRegular14(
+                context,
+              ).copyWith(color: Color(0xffFAFAFA)),
+            ),
           ),
           SizedBox(height: 16),
-          Text(
-            itemModel.price,
-            style: AppStyles.styleSemiBold24.copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.price,
+              style: AppStyles.styleSemiBold24(
+                context,
+              ).copyWith(color: Colors.white),
+            ),
           ),
         ],
       ),

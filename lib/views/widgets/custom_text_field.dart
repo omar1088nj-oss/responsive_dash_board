@@ -10,9 +10,9 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         fillColor: Color(0xfffafafa),
         filled: true,
-        hintStyle: AppStyles.styleRegular16.copyWith(
-          color: const Color(0xffaaaaaa),
-        ),
+        hintStyle: AppStyles.styleRegular16(
+          context,
+        ).copyWith(color: const Color(0xffaaaaaa)),
         hintText: hintText,
         border: builderBorder(),
         enabledBorder: builderBorder(),

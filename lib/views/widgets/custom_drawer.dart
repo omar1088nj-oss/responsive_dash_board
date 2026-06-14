@@ -12,6 +12,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.sizeOf(context).width * 0.7,
       color: Colors.white,
       child: CustomScrollView(
         slivers: [
@@ -32,13 +33,13 @@ class CustomDrawer extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(child: SizedBox(height: 20)),
-                UnActiveDrawer(
+                InActiveDrawer(
                   drawerModelItem: DrawerItemModel(
                     title: 'Setting system',
                     image: Assets.imagesSetting2,
                   ),
                 ),
-                UnActiveDrawer(
+                InActiveDrawer(
                   drawerModelItem: DrawerItemModel(
                     title: 'Logout account',
                     image: Assets.imagesLogout,
